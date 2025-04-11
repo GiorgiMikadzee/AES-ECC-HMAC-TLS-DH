@@ -1,0 +1,12 @@
+PS C:\Users\Mikadze\Desktop\Week5Midterm> Set-Content -NoNewline -Path data.txt -Value "Never trust, always verify."
+PS C:\Users\Mikadze\Desktop\Week5Midterm> type data.txt
+Never trust, always verify.
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl dgst -sha256 data.txt
+SHA2-256(data.txt)= 50dddf8b540a8d16693d741462e1f0431fe43acd4f9c2d006edf7d2e828f7fa4
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl dgst -sha256 -hmac "secretkey123" data.txt
+HMAC-SHA2-256(data.txt)= 77ff6d313b1afbac12ceb402d89d5f5dac37faebe581527cff8dc04eb3193df2
+PS C:\Users\Mikadze\Desktop\Week5Midterm> Set-Content -NoNewline -Path data.txt -Value "Never trust! always verify."
+PS C:\Users\Mikadze\Desktop\Week5Midterm> type data.txt
+Never trust! always verify.
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl dgst -sha256 -hmac "secretkey123" data.txt
+HMAC-SHA2-256(data.txt)= 4b0d953641edcb66452770fbaafd8c3ad367166b192810644bc36c61cd1b80d8

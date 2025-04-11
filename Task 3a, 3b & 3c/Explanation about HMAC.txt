@@ -1,0 +1,5 @@
+For this part I changed the comma after “trust” to an exclamation mark so the sentence became “Never trust! always verify” Even though it’s just a small change when I recomputed the HMAC the result was completely different from the original
+
+That’s what makes HMAC so powerfull. It's not just about checking if something looks right — it makes sure nothing has changed not even a single character. In real world cases this is how systems can tell if a message or file was tamperred with while being sent
+
+What I really like about HMAC is that it doesn’t just check for changes, it also shows that the person verifying it has the right key. So it ensures both integrity and authenticity. Without the proper key someone cant make a valid HMAC even if they tried to fake the message

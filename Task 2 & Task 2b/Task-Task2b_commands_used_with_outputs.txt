@@ -1,0 +1,24 @@
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl ecparam -name prime256v1 -genkey -noout -out PrivateKey_ecc.pem
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl ec -in PrivateKey_ecc.pem -pubout -out PublicKey_ecc.pem
+read EC key
+writing EC key
+PS C:\Users\Mikadze\Desktop\Week5Midterm> dir
+
+
+    Directory: C:\Users\Mikadze\Desktop\Week5Midterm
+
+
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----         4/11/2025   1:03 PM             42 decrypted.txt
+-a----         4/11/2025   1:06 PM            232 PrivateKey_ecc.pem
+-a----         4/11/2025   1:07 PM            182 PublicKey_ecc.pem
+-a----         4/11/2025  12:49 PM             64 secret.enc
+-a----         4/11/2025  12:46 PM             42 secret.txt
+-a----         4/11/2025   1:03 PM           2220 Task1_commands_used.txt
+
+
+PS C:\Users\Mikadze\Desktop\Week5Midterm> Set-Content -NoNewline -Path ecc.txt -Value "Elliptic Curves are efficient."
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl dgst -sha256 -sign PrivateKey_ecc.pem -out ecc.sig ecc.txt
+PS C:\Users\Mikadze\Desktop\Week5Midterm> openssl dgst -sha256 -verify PublicKey_ecc.pem -signature ecc.sig ecc.txt
+Verified OK

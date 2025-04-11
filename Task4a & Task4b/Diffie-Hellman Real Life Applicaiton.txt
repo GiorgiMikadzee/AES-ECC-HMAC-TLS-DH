@@ -1,0 +1,5 @@
+I found out that Diffie-Hellman is actually used in real-life situations like the TLS handshake, which is what happens when a secure connection is set up between your browser and a website (like when you see HTTPS in the address bar). It’s also a part of secure messaging apps like Signal. In those apps, Diffie-Hellman helps people create a shared key so they can message each other privately, even if someone is trying to watch the network.
+
+What makes Diffie-Hellman important is that both sides can end up with the same secret key without ever sending it to each other. They just exchange public values, and both sides calculate the same key on their own. This means even if someone intercepts the messages being exchanged, they won’t be able to figure out the final secret key — unless they can guess the private parts, which is basicly impossible with strong settings.
+
+This matters a lot because in secure communication, it’s not just about keeping data private — it’s about making sure that only the right people can even establish a private conversation in the first place. Without key exchange like this, everything we do online could be way easier to spy on.
